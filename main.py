@@ -4,7 +4,6 @@ import logging
 # Настройка логгера для замера времени
 logging.basicConfig(level=logging.INFO, format='%(message)s')
 
-
 # 1. Итеративная функция Фибоначчи
 def fib_iterative(n):
     """Считает n-ное число Фибоначчи через цикл"""
@@ -17,9 +16,7 @@ def fib_iterative(n):
     # Считаем остальные
     for i in range(2, n + 1):
         a, b = b, a + b
-
     return b
-
 
 # 2. Рекурсивная функция Фибоначчи
 def fib_recursive(n):
@@ -27,7 +24,6 @@ def fib_recursive(n):
     if n <= 1:
         return n
     return fib_recursive(n - 1) + fib_recursive(n - 2)
-
 
 # 3. Рекурсивная сумма всех чисел во вложенных списках
 def sum_nested_list(lst):
@@ -41,9 +37,7 @@ def sum_nested_list(lst):
         else:
             # Если элемент - число, добавляем его
             total += item
-
     return total
-
 
 # Замеряем скорость работы функций Фибоначчи
 def compare_fib_speed():
@@ -71,14 +65,13 @@ def compare_fib_speed():
     print()
     print(f"Разница в скорости: {time_rec / time_iter:.1f} раз")
 
-    # Проверяем корректность
+    # Проверяем
     if result_iter == result_rec:
         print("Результаты совпадают!")
     else:
         print("Ошибка: результаты не совпадают!")
 
-
-# Тестируем функцию суммы вложенных списков
+# Тестируем вложенные списки
 def test_sum_function():
     """Тестирует функцию суммы вложенных списков"""
     test_list = [1, [2, 3], [4, [5, 6]], [-1, -5], 0]
@@ -96,8 +89,7 @@ def test_sum_function():
     else:
         print(f"Ошибка! Ожидалось 15, получилось {result}")
 
-
-# Основная часть программы
+# Основа
 if __name__ == "__main__":
     print("=" * 50)
     print("СРАВНЕНИЕ ФУНКЦИЙ ФИБОНАЧЧИ")
@@ -121,7 +113,7 @@ if __name__ == "__main__":
     print(f"F(50) = {fib_50}")
     print(f"Время расчета: {time_50:.6f} секунд")
 
-    # Важное замечание про рекурсию
+    # рекусрсия долго работает
     print("\n" + "=" * 50)
     print("ВАЖНО!")
     print("=" * 50)
@@ -138,4 +130,5 @@ if __name__ == "__main__":
         time_taken = time.time() - start
         print(f"F(35) = {result}")
         print(f"Время: {time_taken:.2f} секунд")
+
         print("\nА теперь представьте, как долго считалось бы F(50)...")
